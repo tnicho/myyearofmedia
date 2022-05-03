@@ -9,7 +9,7 @@ var viewingSchema = new mongoose.Schema({
     release: String,
     mediaType: {
         type: String,
-        enum: ['Book', 'Movie', 'TV']
+        enum: ['books', 'movies', 'televisions']
     },
     creator: String,
     apiId: String,
@@ -36,6 +36,12 @@ var userSchema = new mongoose.Schema({
 }, {
     timestamps: true
 });
+
+
+
+
+
+
 
 let User = mongoose.model('User', userSchema);
 let Viewings = mongoose.model('Viewing', viewingSchema);

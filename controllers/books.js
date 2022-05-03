@@ -7,6 +7,7 @@ module.exports = {
     searchAPI,
     show,
     create,
+    delete: deleteViewing,
 };
 
 
@@ -50,4 +51,12 @@ function create(req, res){
     req.user.save(function(err){
     res.redirect('/users/books/' + req.params.id)
     });
+}
+
+function deleteViewing(req,res){
+    const idx = req.user.viewings.findIndex(viewing => viewing.id === req.params.id);
+    req.user.viewings.splice(idx,1)
+    req.user.save(function(err){
+        res.redirect('/users/books/' + req.body.apiId)
+        });
 }

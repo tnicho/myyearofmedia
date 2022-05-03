@@ -5,18 +5,26 @@
     <div id="media-list-div">
       <table id="media-list">
         <thead>
+          <th>Picture</th>
           <th>Date Viewed</th>
           <th>Title</th>
           <th>Creator</th>
         </thead>
         <tbody>
+          <%if (user) {%>
           <tr>
-            <a href="/media/:id">
-            <td>DATE HERE</td>
-            <td>TITLE HERE</td>
-            <td>CREATOR HERE</td>
-            </a>
+            <%user.viewings.forEach(function(v){%>
+              <td>
+                <a href="/users/<%=v.mediaType%>/<%=v.apiId%>">
+                  <button><%=v.apiId%></button>
+                </a>
+              </td>
+              <td><%=v.viewDate%></td>
+              <td><%=v.title%></td>
+              <td><%=v.creator%></td>
+            <%})%>
           </tr>
+          <%}%>
         </tbody>
       </table>
     </div>

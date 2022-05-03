@@ -1,0 +1,40 @@
+<%- include('../../partials/header') %>
+    
+<h1>MOVIES SEARCH PAGE</h1>
+
+<div id="search-form-div">
+    <form id="search-form" action="/users/movies/search" method="POST">
+        <label>Title</label>
+        <input type="text" name="title">
+        <label>Release Year</label>
+        <input type="number" name="releaseYear">
+        <button type="submit" value="Search Movie">Search</button>
+    </form>
+</div>
+<%if (results){%>
+<div id="search-results-div">
+    <table id="search-results-table">
+        <thead>
+            <th>Poster</th>
+            <th>Title</th>
+            <th>Info</th>
+        </thead>
+        <tbody>
+            <% results.forEach(function(r){ %>
+                <!-- window.location can be used to get page information or chagen current page -->
+        <tr>  
+            <td>
+                <a href="/users/movies/<%=r.id%>">
+                <img src=<%= r.image%> width='100px'/>
+                </a>
+            </td>
+            <td><%= r.title%></td>
+            <td><%= r.year%></td>
+            <td><%= r.description%></td>
+        </tr>
+            <%});%>
+        </tbody>
+    </table>
+</div>
+<%}%>
+<%- include('../../partials/footer') %>

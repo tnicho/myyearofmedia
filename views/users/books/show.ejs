@@ -1,0 +1,76 @@
+<%-include("../../partials/header")%>
+
+<h1>Books Show Page</h1>
+
+<div class="media-info">
+    <% if (book.volumeInfo.imageLinks !== undefined){%>
+        <img src=<%= book.volumeInfo.imageLinks.thumbnail%> width='100px'>
+    <%} else {%>
+        <img src="/images/No_Cover.png" width=100px/>
+    <%}%>
+    <label>Title: <%= book.volumeInfo.title%></label>
+    <label>Authors: <%= book.volumeInfo.authors%></label>
+    <label>Published Date: <%= book.volumeInfo.publishedDate%></label>
+    <label>Page Count: <%= book.volumeInfo.pageCount%></label>
+    <label>Categories: <%= book.volumeInfo.categories%></label>
+    <label>Average Rating (Google Books): <%= book.volumeInfo.averageRating%></label>
+    <label>Description: <%= book.volumeInfo.Description%></label>
+</div>
+
+<div class="insert-viewing">
+    <h1>Insert a Viewing</h1>
+
+    <form action="/users/books/<%=book.id%>/create" method="POST">
+        <label>Date Viewed</label>
+        <input type="date" name="viewDate">
+        <label>Rating</label>
+        <select name="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <label>Notes</label>
+        <textarea rows = "4" cols="60" name="notes"></textarea>
+        <input type="hidden" name="coverImage" value="movie.image">   
+        <input type="hidden" name="title" value="<%=book.volumeInfo.title%>">
+        <input type="hidden" name="release" value="<%=book.volumeInfo.publishedDate%>">
+        <input type="hidden" name="mediaType" value="Book">
+        <input type="hidden" name="creator" value="<%=book.volumeInfo.authors%>">
+        <input type="hidden" name="apiId" value="<%=book.id%>">
+        <input type="submit" value="Enter New Viewing">
+        
+    </form>
+
+    <table>
+        <thead>
+            <th></th>
+            <th>Date Viewed</th>
+            <th>Rating (out of 5)</th>
+            <th>Notes</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <%viewings.forEach(function(v){%>
+                <td>
+                    <form action="users/books/<%=v.id%>?_method=DELETE" method="POST">
+                        <button class="delete-button">X</button>
+                    <form>
+                </td>
+                <td><%=v.viewDate%></td>
+                <td><%=v.rating%></td>
+                <td><%=v.notes%></td>
+                <td>
+                    <form action = "users/books/<%=v.id%>?_method=PUT" method="POST">
+                        <button class="edit-button">Update</button>
+                    </form>
+                </td>
+                
+                
+            <%})%>
+        </tbody>
+    </table>
+
+</div>
+<%-include("../../partials/footer")%>

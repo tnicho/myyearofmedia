@@ -1,0 +1,79 @@
+*{
+  box-sizing: border-box;
+}
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: auto;
+  height: auto;
+  
+}
+
+a {
+  color: #00B7FF;
+}
+
+#nav-bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: lightblue;
+  font-size: 30px;
+}
+
+#year-title{
+  display: flex;
+  justify-content: center;
+}
+
+#media-list-div{
+  display: flex;
+  justify-content: center;
+  background-color: lightcoral;
+}
+
+#media-list{
+  width: 90%;
+  background-color: lightyellow;
+}
+
+/*  -------- SEARCH PAGE ----------*/
+
+#search-form-div {
+  display: flex;
+  justify-content: center;
+}
+#search-form{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+
+}
+#search-results-div{
+  display: flex;
+  justify-content: center;
+}
+
+table thead th {
+  padding: 5px;
+  border-bottom: 2px solid #424748;
+}
+
+table td {
+  padding: 10px;
+  text-align: center;
+}
+
+form label {
+  padding: 10px;
+  text-align: left;
+}
+
+form button{
+  margin: 10px;
+}
+
+#book-info{
+  display: flex;
+  flex-direction: column;
+}

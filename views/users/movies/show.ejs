@@ -1,0 +1,65 @@
+<%-include("../../partials/header")%>
+
+<h1>Movies Show Page</h1>
+
+<div class="media-info">
+    <% if (movie.image !== undefined){%>
+        <img src=<%= movie.image%> width='100px'>
+    <%} else {%>
+        <img src="/images/No_Cover.png" width=100px/>
+    <%}%>
+    <label>Title: <%=movie.title%></label>
+    <label>Release Year: <%=movie.year%></label>
+    <label>Director: <%=movie.directors%></label>
+    <label>Writer: <%=movie.writers%></label>
+    <label>Actors: <%=movie.stars%></label>
+    <label>Plot: <%=movie.plot%></label>
+</div>
+
+<div class="insert-viewing">
+    <h1>Insert a Viewing</h1>
+    <form action="/users/movies/<%=movie.id%>/create" method="POST">
+        <label>Date Viewed</label>
+        <input type="date" name="viewDate">
+        <label>Rating</label>
+        <select name="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <label>Notes</label>
+        <textarea rows = "4" cols="60" name="notes"></textarea>
+        <input type="hidden" name="coverImage" value="movie.image">   
+        <input type="hidden" name="title" value="<%=movie.title%>">
+        <input type="hidden" name="releaseYear" value="<%=movie.year%>">
+        <input type="hidden" name="mediaType" value="Book">
+        <input type="hidden" name="creator" value="<%=movie.directors%>">
+        <input type="hidden" name="apiId" value="<%=movie.id%>">
+        <button type="submit" value="Enter New Viewing">Enter New Viewing</button>
+    </form>
+</div>
+
+<div class ='views listings'>
+    <table>
+        <thead>
+            <th>Date Viewed</th>
+            <th>Rating (out of 5)</th>
+            <th>Notes</th>
+        </thead>
+        <tbody>
+            <%viewings.forEach(function(v){%>
+                <td><%=v.viewDate%></td>
+                <td><%=v.rating%></td>
+                <td><%=v.notes%></td>
+                
+            <%})%>
+        </tbody>
+    </table>
+
+
+</div>
+
+
+<%-include("../../partials/footer")%>

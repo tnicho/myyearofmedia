@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Media List</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <nav id="nav-bar">
+      <div class="dropdown">
+        <button>Include Image</button>
+        <div id="dropdownLinks">
+          <a href="/users">Media List</a>
+          <a href="/users/books/search">Search Books</a>
+          <a href="/users/movies/search">Search Movies</a>
+          <a href="/logout">LogOut</a>
+        </div>
+      </div>
+      <h1>My Media List</h1>
+      <div>
+        <%if (!user) {%>
+          <a href="/auth/google">Login with Google</a>
+          <%}%>
+      </div>
+    </nav>

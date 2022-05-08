@@ -1,0 +1,38 @@
+<%-include("../../partials/header")%>
+<%-include("../../partials/bookshowinfo")%>
+
+<%-include("../../partials/footer")%>
+
+<div class="insert-viewing">
+    <h1>Update a Viewing</h1>
+
+    
+    <form action = "/users/books/<%=viewing.id%>?_method=PUT" method="POST">
+        <label>Date Viewed</label>
+        <input type="date" name="viewDate" value="<%=viewing.release%>">
+        <label>Rating</label>
+        <select name="rating">
+            <option value="<%=viewing.rating%>"><%=viewing.rating%></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <label>Notes</label>
+        <textarea rows = "4" cols="60" name="notes" ><%=viewing.notes%></textarea>
+        <input type="hidden" name="coverImage" value="movie.image">   
+        <input type="hidden" name="title" value="<%=book.volumeInfo.title%>">
+        <input type="hidden" name="release" value="<%=book.volumeInfo.publishedDate%>">
+        <input type="hidden" name="mediaType" value="books">
+        <input type="hidden" name="creator" value="<%=book.volumeInfo.authors%>">
+        <input type="hidden" name="apiId" value="<%=book.id%>">
+        <input type="submit" value="Update Your Viewing">
+        
+    </form>
+
+    <form action="/users/books/<%=viewing.id%>?_method=DELETE" method="POST">
+        <button class="delete-button">Delete Your Viewing</button>
+        <input type="hidden" name="apiId" value="<%=book.id%>">
+    <form>
+    

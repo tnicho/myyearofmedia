@@ -8,6 +8,8 @@ module.exports = {
     show,
     create,
     delete: deleteViewing,
+    edit,
+    update,
 };
 
 
@@ -39,9 +41,7 @@ function searchAPI(req, res){
 function show (req, res){
     request((rootURL + '/' + req.params.id), function(err, response, body){
         const book = JSON.parse(body);
-        console.log(req.user.viewings)
         const viewings = req.user.viewings.filter(viewing => viewing.apiId === req.params.id)
-        console.log(viewings)
         res.render('users/books/show', {book, viewings, user: req.user})
     })
 }
@@ -59,4 +59,24 @@ function deleteViewing(req,res){
     req.user.save(function(err){
         res.redirect('/users/books/' + req.body.apiId)
         });
+}
+
+function edit (req, res)
+{
+    const viewing = req.user.viewings.find(viewing => viewing.id === req.params.id)
+    request((rootURL + '/' + viewing.apiId), function(err, response, body){
+        const book = JSON.parse(body);
+        res.render('users/books/edit', {book, viewing, user: req.user})
+    })
+    
+}
+
+function update(req,res){
+    const idx = req.user.viewings.findIndex(viewing => viewing.id === req.params.id);
+    req.user.viewings.splice(idx,1, req.body)
+    req.user.save(function(err){
+        res.redirect('/users/books/' + req.body.apiId)
+        console.log('in the upload function')
+    });
+
 }

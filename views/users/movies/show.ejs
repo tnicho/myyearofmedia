@@ -3,17 +3,17 @@
 <h1>Movies Show Page</h1>
 
 <div class="media-info">
-    <% if (movie.image !== undefined){%>
-        <img src=<%= movie.image%> width='100px'>
+    <% if (movieDetails.poster_path !== null){%>
+        <img src='https://image.tmdb.org/t/p/original/<%= movieDetails.poster_path%>' width='100px'/>
     <%} else {%>
-        <img src="/images/No_Cover.png" width=100px/>
+        <img src="/images/No_Cover.png"/>
     <%}%>
-    <label>Title: <%=movie.title%></label>
-    <label>Release Year: <%=movie.year%></label>
-    <label>Director: <%=movie.directors%></label>
-    <label>Writer: <%=movie.writers%></label>
-    <label>Actors: <%=movie.stars%></label>
-    <label>Plot: <%=movie.plot%></label>
+    <label>Title: <%=movieDetails.original_title%></label>
+    <label>Release Year: <%=movieDetails.release_date%></label>
+    <label>Director: <%=director%></label>
+    <label>Writer: <%=writer%></label>
+    <label>Actors: <%=stars%></label>
+    <label>Plot: <%=movieDetails.overview%></label>
 </div>
 
 <div class="insert-viewing">

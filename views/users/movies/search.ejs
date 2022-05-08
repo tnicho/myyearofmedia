@@ -7,7 +7,7 @@
         <label>Title</label>
         <input type="text" name="title">
         <label>Release Year</label>
-        <input type="number" name="releaseYear">
+        <input type="number" name="year">
         <button type="submit" value="Search Movie">Search</button>
     </form>
 </div>
@@ -25,7 +25,12 @@
         <tr>  
             <td>
                 <a href="/users/movies/<%=r.id%>">
-                <img src=<%= r.image%> width='100px'/>
+                    <a href="/users/movies/<%=r.id%>">
+                        <% if (r.poster_path !== null){%>
+                        <img src='https://image.tmdb.org/t/p/original/<%= r.poster_path%>' width='100px'/>
+                        <%} else {%>
+                        <img src="/images/No_Cover.png"/>
+                        <%}%>
                 </a>
             </td>
             <td><%= r.title%></td>

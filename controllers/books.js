@@ -34,6 +34,7 @@ function searchAPI(req, res){
 
     request((rootURL + search), function(err, response, body){
         const searchResults = JSON.parse(body);
+        console.log(searchResults)
         res.render('users/books/search', {results: searchResults.items, user: req.user})
     })
 }

@@ -1,9 +1,11 @@
 <%- include('../../partials/header') %>
-    
-<h1>MOVIES SEARCH PAGE</h1>
 
-<div id="search-form-div">
-    <form id="search-form" action="/users/movies/search" method="POST">
+<div class="sub-header">
+    <h1>MOVIES SEARCH PAGE</h1>
+</div>
+
+<div class="search-form-div">
+    <form class="search-form" action="/users/movies/search" method="POST">
         <label>Title</label>
         <input type="text" name="title">
         <label>Release Year</label>
@@ -12,12 +14,12 @@
     </form>
 </div>
 <%if (results){%>
-<div id="search-results-div">
-    <table id="search-results-table">
+<div class="search-results-div">
+    <table class="search-results-table">
         <thead>
             <th>Poster</th>
             <th>Title</th>
-            <th>Info</th>
+            <th>Release Date</th>
         </thead>
         <tbody>
             <% results.forEach(function(r){ %>
@@ -27,15 +29,14 @@
                 <a href="/users/movies/<%=r.id%>">
                     <a href="/users/movies/<%=r.id%>">
                         <% if (r.poster_path !== null){%>
-                        <img src='https://image.tmdb.org/t/p/original/<%= r.poster_path%>' width='100px'/>
+                        <img src='https://image.tmdb.org/t/p/original/<%= r.poster_path%>' width='200vw'/>
                         <%} else {%>
                         <img src="/images/No_Cover.png"/>
                         <%}%>
                 </a>
             </td>
             <td><%= r.title%></td>
-            <td><%= r.year%></td>
-            <td><%= r.description%></td>
+            <td><%= r.release_date%></td>
         </tr>
             <%});%>
         </tbody>

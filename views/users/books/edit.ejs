@@ -1,7 +1,7 @@
 <%-include("../../partials/header")%>
 <%-include("../../partials/bookshowinfo")%>
 
-<%-include("../../partials/footer")%>
+
 
 <div class="insert-viewing">
     <h1>Update a Viewing</h1>
@@ -9,7 +9,7 @@
     
     <form action = "/users/books/<%=viewing.id%>?_method=PUT" method="POST">
         <label>Date Viewed</label>
-        <input type="date" name="viewDate" value="<%=viewing.release%>">
+        <input type="date" name="viewDate" value="<%=viewing.viewDate%>">
         <label>Rating</label>
         <select name="rating">
             <option value="<%=viewing.rating%>"><%=viewing.rating%></option>
@@ -35,4 +35,5 @@
         <button class="delete-button">Delete Your Viewing</button>
         <input type="hidden" name="apiId" value="<%=book.id%>">
     <form>
-    
+
+<%-include("../../partials/footer")%>

@@ -6,11 +6,11 @@
     <%} else {%>
         <img src="/images/No_Cover.png" width=100px/>
     <%}%>
-    <label>Title: <%= book.volumeInfo.title%></label>
-    <label>Authors: <%= book.volumeInfo.authors%></label>
-    <label>Published Date: <%= book.volumeInfo.publishedDate%></label>
-    <label>Page Count: <%= book.volumeInfo.pageCount%></label>
-    <label>Categories: <%= book.volumeInfo.categories%></label>
-    <label>Average Rating (Google Books): <%= book.volumeInfo.averageRating%></label>
-    <label>Description: <%= book.volumeInfo.Description%></label>
+    <label class="showTitle">Title: <%= book.volumeInfo.title%></label>
+    <label class="showTitle">Authors: <%= book.volumeInfo.authors%></label>
+    <label class="showTitle">Published Date: <%= book.volumeInfo.publishedDate%></label>
+    <label class="showTitle">Page Count: <%= book.volumeInfo.pageCount%></label>
+    <label class="showTitle">Categories: <%= book.volumeInfo.categories%></label>
+    <label class="showTitle">Average Rating (Google Books): <%= book.volumeInfo.averageRating%></label>
+    <label class="showTitle">Description: <%= book.volumeInfo.Description%></label>
 </div>

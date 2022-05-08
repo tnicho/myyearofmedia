@@ -5,20 +5,20 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <nav id="nav-bar">
-      <div class="dropdown">
-        <button>Include Image</button>
-        <div id="dropdownLinks">
-          <a href="/users">Media List</a>
-          <a href="/users/books/search">Search Books</a>
-          <a href="/users/movies/search">Search Movies</a>
-          <a href="/logout">LogOut</a>
-        </div>
-      </div>
+    <div id="title-bar">
       <h1>My Media List</h1>
+  </div>
+    <%if (!user) {%>
       <div>
-        <%if (!user) {%>
-          <a href="/auth/google">Login with Google</a>
-          <%}%>
+      <a href="/auth/google">Login with Google</a>
+    </div>
+      <%} else {%>
+    <div class="searchBar">
+      <div id="searchLinks">
+        <a href="/users">Media List</a>
+        <a href="/users/books/search">Search Books</a>
+        <a href="/users/movies/search">Search Movies</a>
+        <a href="/logout">LogOut</a>
       </div>
-    </nav>
+    </div>
+    <%}%>

@@ -1,24 +1,11 @@
 <%-include("../../partials/header")%>
+<%-include("../../partials/movieshowinfo")%>
 
-<h1>Movies Show Page</h1>
-
-<div class="media-info">
-    <% if (movieDetails.poster_path !== null){%>
-        <img src='https://image.tmdb.org/t/p/original/<%= movieDetails.poster_path%>' width='100px'/>
-    <%} else {%>
-        <img src="/images/No_Cover.png"/>
-    <%}%>
-    <label>Title: <%=movieDetails.original_title%></label>
-    <label>Release Year: <%=movieDetails.release_date%></label>
-    <label>Director: <%=director%></label>
-    <label>Writer: <%=writer%></label>
-    <label>Actors: <%=stars%></label>
-    <label>Plot: <%=movieDetails.overview%></label>
-</div>
-
-<div class="insert-viewing">
+<div class="sub-header">
     <h1>Insert a Viewing</h1>
-    <form action="/users/movies/<%=movie.id%>/create" method="POST">
+</div>
+<div class="view-div">
+    <form class="view-form" action="/users/movies/<%=movieDetails.id%>/create" method="POST">
         <label>Date Viewed</label>
         <input type="date" name="viewDate">
         <label>Rating</label>
@@ -31,29 +18,33 @@
         </select>
         <label>Notes</label>
         <textarea rows = "4" cols="60" name="notes"></textarea>
-        <input type="hidden" name="coverImage" value="movie.image">   
-        <input type="hidden" name="title" value="<%=movie.title%>">
-        <input type="hidden" name="releaseYear" value="<%=movie.year%>">
-        <input type="hidden" name="mediaType" value="Book">
-        <input type="hidden" name="creator" value="<%=movie.directors%>">
-        <input type="hidden" name="apiId" value="<%=movie.id%>">
+        <input type="hidden" name="coverImage" value="https://image.tmdb.org/t/p/original/<%= movieDetails.poster_path%>">   
+        <input type="hidden" name="title" value="<%=movieDetails.original_title%>">
+        <input type="hidden" name="releaseYear" value="<%=movieDetails.release_date%>">
+        <input type="hidden" name="mediaType" value="movies">
+        <input type="hidden" name="creator" value="<%=director%>">
+        <input type="hidden" name="apiId" value="<%=movieDetails.id%>">
         <button type="submit" value="Enter New Viewing">Enter New Viewing</button>
     </form>
 </div>
 
-<div class ='views listings'>
-    <table>
+<div class="views-table-div">
+    <table class="views-table">
         <thead>
             <th>Date Viewed</th>
-            <th>Rating (out of 5)</th>
+            <th>Rating</th>
             <th>Notes</th>
         </thead>
         <tbody>
             <%viewings.forEach(function(v){%>
                 <td><%=v.viewDate%></td>
-                <td><%=v.rating%></td>
+                <td><%=v.rating%>/5</td>
                 <td><%=v.notes%></td>
-                
+                <td class="views-button-cell">
+                    <form action="/users/movies/edit/<%=v.id%>" method="GET">
+                        <button class="edit-button">Update</button>
+                    </form>
+                </td>
             <%})%>
         </tbody>
     </table>

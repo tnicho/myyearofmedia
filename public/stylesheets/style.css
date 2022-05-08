@@ -6,16 +6,20 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   width: auto;
   height: auto;
-  
 }
-
 a {
   color: #00B7FF;
 }
 
-#nav-bar{
+#title-bar{
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  background-color: lightblue;
+  font-size: 30px;
+}
+#searchLinks{
+  display: flex;
   justify-content: space-between;
   background-color: lightblue;
   font-size: 30px;
@@ -33,36 +37,73 @@ a {
 }
 
 #media-list{
+  display: flex;
+  flex-direction: column;
   width: 90%;
   background-color: lightyellow;
 }
 
 /*  -------- SEARCH PAGE ----------*/
 
-#search-form-div {
+.search-form-div {
   display: flex;
   justify-content: center;
 }
-#search-form{
+.search-form{
   display: flex;
   flex-direction: column;
   margin-bottom: 50px;
-
-}
-#search-results-div{
-  display: flex;
+  width: auto;
   justify-content: center;
 }
 
-table thead th {
-  padding: 5px;
-  border-bottom: 2px solid #424748;
+.search-form label{
+  font-size: 5vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1vh;
 }
 
-table td {
+.search-form input{
+  font-size: 5vw;
+  margin-bottom: 1vh;
+}
+
+.search-form button{
+  font-size: 5vw;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.search-results-div{
+  display: flex;
+  justify-content: center;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-results-table{
+  border-collapse: collapse;
+}
+
+.search-results-table thead th {
+  padding: 10px;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 30px;
+  width: 20%;
+}
+
+.search-results-table td {
   padding: 10px;
   text-align: center;
+  font-size: 30px;
+  width: 20%;
+  border: 1px solid black;
 }
+
 
 form label {
   padding: 10px;
@@ -76,4 +117,126 @@ form button{
 #book-info{
   display: flex;
   flex-direction: column;
+}
+
+.search-results-table thead th{
+  font-size: 4vw;
+}
+
+.search-results-table tbody td{
+  font-size: 4vw;
+}
+
+
+/*-----Show Page------*/
+
+.sub-header{
+  display: flex;
+  justify-content: center;
+  font-size: 2.5vw;
+}
+
+.media-info{
+  display: flex;
+}
+
+.show-cover-div{
+  margin: 0px 10px 10px 0px;
+  width: 30vw;
+}
+.show-cover{
+  width: 30vw;
+}
+.show-info{
+  display: flex;
+  flex-direction: column;
+  font-size: 3vw;
+  margin-left: 5%;
+}
+.show-segment{
+  display: flex;
+}
+
+.show-segment-title{
+  font-weight: bolder;
+  margin-right: 5px;
+}
+.show-table {
+  border: 0;
+}
+
+.show-table th{
+  width: 10%;
+  font-size: 4vw;
+}
+.show-table td{
+  font-size: medium;
+  font-size: 4vw;
+}
+.plot-title{
+  font-weight: bolder;
+}
+.show-plot{
+  margin-top: 2vw;
+}
+.view-div{
+  display: flex;
+  justify-content: center;
+  padding: 20vw, 0vw, 20vw, 0vw;
+  margin-bottom: 30px;
+}
+
+.view-form{
+  display: flex;
+  flex-direction: column;
+  
+}
+.view-form input{
+  font-size: 3vw;
+  width: 25vw;
+}
+.view-form label{
+  font-size: 3vw;
+}
+.view-form select{
+  font-size: 3vw;
+  width: 15vw;
+}
+.view-form button{
+  width: 20vw;
+  height: auto;
+  font-size: 3vw;
+}
+.view-form textarea{
+  font-size: 3vw;
+  width: 60vw;
+}
+
+.views-table{
+  font-size: 3vw;
+  border-collapse: collapse;
+}
+
+
+.views-table thead th {
+  padding: 10px;
+  border-bottom: 1px solid black;
+  text-align: center;
+  font-size: 30px;
+  width: 20%;
+}
+
+.views-table td {
+  padding: 10px;
+  text-align: center;
+  font-size: 30px;
+  width: 20%;
+}
+.views-button-cell {
+  border: 0px;
+}
+.views-button-cell button {
+  font-size: 3vw;
+  padding: 4px;
+  width: 80%;
 }

@@ -1,0 +1,38 @@
+<%-include("../../partials/header")%>
+<%-include("../../partials/movieshowinfo")%>
+
+
+
+<div class="insert-viewing">
+    <h1>Update a Viewing</h1>
+
+    <form action = "/users/movies/<%=viewing.id%>?_method=PUT" method="POST">
+        <label>Date Viewed</label>
+        <input type="date" name="viewDate" value="<%=viewing.viewDate%>">
+        <label>Rating</label>
+        <select name="rating">
+            <option value="<%=viewing.rating%>"><%=viewing.rating%></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <label>Notes</label>
+        <textarea rows = "4" cols="60" name="notes" ><%=viewing.notes%></textarea>
+        <input type="hidden" name="coverImage" value="https://image.tmdb.org/t/p/original/<%= movieDetails.poster_path%>">   
+        <input type="hidden" name="title" value="<%=movieDetails.original_title%>">
+        <input type="hidden" name="releaseYear" value="<%=movieDetails.release_date%>">
+        <input type="hidden" name="mediaType" value="movies">
+        <input type="hidden" name="creator" value="<%=director%>">
+        <input type="hidden" name="apiId" value="<%=movieDetails.id%>">
+        <button type="submit" value="Enter New Viewing">Update Viewing</button>
+        
+    </form>
+
+    <form action="/users/movies/<%=viewing.id%>?_method=DELETE" method="POST">
+        <button class="delete-button">Delete Your Viewing</button>
+        <input type="hidden" name="apiId" value="<%=movieDetails.id%>">
+    <form>
+        
+<%-include("../../partials/footer")%>

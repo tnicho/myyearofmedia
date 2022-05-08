@@ -2,8 +2,8 @@
     
 <h1>BOOKS SEARCH PAGE</h1>
 
-<div id="search-form-div">
-    <form id="search-form" action="/users/books/search" method="POST">
+<div class="search-form-div">
+    <form class="search-form" action="/users/books/search" method="POST">
         <label>Title</label>
         <input type="text" name="title">
         <label>Author</label>
@@ -12,7 +12,7 @@
     </form>
 </div>
 <%if (results){%>
-<div id="search-results-div">
+<div class="search-results-div">
     <table id="search-results-table">
         <thead>
             <th>Poster</th>

@@ -1,0 +1,39 @@
+<div class="sub-header">
+    <h1>Movies Show Page</h1>
+</div>
+<div class="media-info">
+    <div class="show-cover-div">
+        <% if (movieDetails.poster_path !== null){%>
+            <img class="show-cover" src='https://image.tmdb.org/t/p/original/<%= movieDetails.poster_path%>'/>
+        <%} else {%>
+            <img class="show-cover" src="/images/No_Cover.png"/>
+        <%}%>
+    </div>
+    <table class="show-table">
+        <tr>
+            <th>Title: </th>
+            <td><%=movieDetails.original_title%></td>
+        </tr>
+        <tr>
+            <th>Release Date</th>
+            <td><%=movieDetails.release_date%></td>
+        </tr>
+        <tr>
+            <th>Director:</th>
+            <td><%=director%></td>
+        </tr>
+        <tr>
+            <th>Writer:</th>
+            <td><%=writer%></td>
+        </tr>
+        <tr>
+            <th>Actors:</th>
+            <td><%=stars%></td>
+        </tr>
+
+    </table>
+</div>
+<div class="show-plot">
+    <label class="plot-title">Plot:</label>
+    <label><%=movieDetails.overview%></label>
+</div>

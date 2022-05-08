@@ -1,5 +1,7 @@
 <%- include('../partials/header') %>
-    <div id='year-title'>
+<%if (user) {%>
+ 
+<div id='year-title'>
     <h1><%= title %></h1>
     </div>
     <div id="media-list-div">
@@ -9,23 +11,26 @@
           <th>Date Viewed</th>
           <th>Title</th>
           <th>Creator</th>
+          <th>Rating</th>
         </thead>
         <tbody>
-          <%if (user) {%>
-          <tr>
-            <%user.viewings.forEach(function(v){%>
-              <td>
-                <a href="/users/<%=v.mediaType%>/<%=v.apiId%>">
-                  <button><%=v.apiId%></button>
-                </a>
-              </td>
-              <td><%=v.viewDate%></td>
-              <td><%=v.title%></td>
-              <td><%=v.creator%></td>
+          <%user.viewings.forEach(function(v){%>  
+              <tr>
+                <td>
+                  <a href="/users/<%=v.mediaType%>/<%=v.apiId%>">
+                    <img src="<%=v.coverImage%>" width='100px'>
+                  </a>
+                </td>
+                <td><%=v.viewDate%></td>
+                <td><%=v.title%></td>
+                <td><%=v.creator%></td>
+                <td><%=v.rating%>/5</td>
+            </tr>
             <%})%>
-          </tr>
-          <%}%>
         </tbody>
+
       </table>
     </div>
+
+    <%}%>
 <%- include('../partials/footer') %>

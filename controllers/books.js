@@ -66,8 +66,8 @@ function edit (req, res)
 {
     const viewing = req.user.viewings.find(viewing => viewing.id === req.params.id)
     request((rootURL + '/' + viewing.apiId), function(err, response, body){
-        const movie = JSON.parse(body);
-        res.render('users/books/edit', {movie, viewing, user: req.user})
+        const book = JSON.parse(body);
+        res.render('users/books/edit', {book, viewing, user: req.user})
     })
     
 }

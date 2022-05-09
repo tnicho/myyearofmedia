@@ -26,9 +26,9 @@ Steps:
 6)Views can be edited or deleted by selecting the cover of the media you wish to edit 
     and using the update button next o the specific viewing
     
-Link to the deployed App: 
+Link to the deployed App: https://myyearinmedia.herokuapp.com/
 
-Link to Trello board used for set up
+Link to Trello board used for set up: https://trello.com/b/HE2VNQkC/project-2-crud
 
 Icebox Items:
 

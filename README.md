@@ -3,6 +3,9 @@
 MyYearOfMedia (aka My Media List)
 
 Screenshots:
+https://github.com/tnicho/myyearofmedia/blob/main/myyearofmedia%20HomePage.png
+https://github.com/tnicho/myyearofmedia/blob/main/myyearinmedia%20search%20page.png
+https://github.com/tnicho/myyearofmedia/blob/main/myyearinmedia%20media%20page.png
 
 Technologies Used: Express, Node.js, HTML, CSS, Javascript, Google Books API, TMDB API, Heroku
 

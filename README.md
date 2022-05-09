@@ -2,6 +2,8 @@
 
 MyYearOfMedia (aka My Media List)
 
+***MyYearOfMedia was designed for use on mobile devices***
+
 Screenshots:
 https://github.com/tnicho/myyearofmedia/blob/main/myyearofmedia%20HomePage.png
 https://github.com/tnicho/myyearofmedia/blob/main/myyearinmedia%20search%20page.png

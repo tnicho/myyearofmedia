@@ -2,36 +2,36 @@
     <h1>Books Show Page</h1>
 </div>
 
-<div class="media-info">
+<div class="show-info">
     <div class="show-cover-div">
         <% if (book.volumeInfo.imageLinks !== undefined){%>
             <img class="show-cover" src=<%= book.volumeInfo.imageLinks.thumbnail%>>
         <%} else {%>
             <img class="show-cover" src="/images/No_Cover.png"/>
         <%}%>
-        </div>
-        <table class="show-table">
-            <tr>
-                <th>Title: </th>
-                <td><%= book.volumeInfo.title%></td>
-            </tr>
-            <tr>
-                <th>Author: </th>
-                <td><%= book.volumeInfo.authors%></td>
-            </tr>
-            <tr>
-                <th>Publish Date: </th>
-                <td><%= book.volumeInfo.publishedDate%></td>
-            </tr>
-            <tr>
-                <th>Page Count: </th>
-                <td><%=book.volumeInfo.pageCount%></td>
-            </tr>
-            <tr>
-                <th>Categories: </th>
-                <td><%=book.volumeInfo.categories%></td>
-            </tr>
-        </table>
+    </div>
+    <table class="show-table">
+        <tr>
+            <th>Title: </th>
+            <td><%= book.volumeInfo.title%></td>
+        </tr>
+        <tr>
+            <th>Author: </th>
+            <td><%= book.volumeInfo.authors%></td>
+        </tr>
+        <tr>
+            <th>Publish Date: </th>
+            <td><%= book.volumeInfo.publishedDate%></td>
+        </tr>
+        <tr>
+            <th>Page Count: </th>
+            <td><%=book.volumeInfo.pageCount%></td>
+        </tr>
+        <tr>
+            <th>Categories: </th>
+            <td><%=book.volumeInfo.categories%></td>
+        </tr>
+    </table>
 </div>
 <div class="show-plot">
     <label class="plot-title">Plot:</label>

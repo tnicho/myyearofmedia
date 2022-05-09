@@ -1,46 +1,68 @@
 *{
   box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
 }
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   width: auto;
   height: auto;
-}
-a {
-  color: #00B7FF;
+  background-color: #f7f7f7;
+  color: #365b6d;
 }
 
 #title-bar{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: lightblue;
+  background-color: #289dd2;
+  color: #f2f1ec;
   font-size: 30px;
+
 }
+
 #searchLinks{
   display: flex;
   justify-content: space-between;
-  background-color: lightblue;
-  font-size: 30px;
+  font-size: 35px;
+  color: #f2f1ec;
+  background-color: #41C1BA;
 }
 
 #year-title{
   display: flex;
   justify-content: center;
+  font-size: 5vw;
+}
+#year-title h1{
+  margin: 0;
 }
 
 #media-list-div{
   display: flex;
   justify-content: center;
-  background-color: lightcoral;
 }
 
 #media-list{
   display: flex;
   flex-direction: column;
   width: 90%;
-  background-color: lightyellow;
+  background-color: #f2f1ec;
+  border: 20px solid #41C1BA;
+  border-collapse: collapse;
+}
+
+#media-list th {
+  border: 3px solid #41C1BA;
+  font-size: 3vw;
+  width: 20%;
+}
+
+#media-list td {
+  border: 3px solid #41C1BA;
+  width: 20%;
+  font-size: 3vw;
 }
 
 /*  -------- SEARCH PAGE ----------*/
@@ -79,29 +101,30 @@ a {
 .search-results-div{
   display: flex;
   justify-content: center;
-  width: 80vw;
+  width: 85vw;
   margin-left: auto;
   margin-right: auto;
+  border: 20px solid #41C1BA;
 }
 
 .search-results-table{
   border-collapse: collapse;
 }
 
-.search-results-table thead th {
+.search-results-table th {
   padding: 10px;
-  border: 1px solid black;
   text-align: center;
   font-size: 30px;
   width: 20%;
+  border: 3px solid #41C1BA;
 }
 
 .search-results-table td {
   padding: 10px;
   text-align: center;
   font-size: 30px;
-  width: 20%;
-  border: 1px solid black;
+  width: auto;
+  border: 3px solid #41C1BA;
 }
 
 
@@ -136,9 +159,6 @@ form button{
   font-size: 2.5vw;
 }
 
-.media-info{
-  display: flex;
-}
 
 .show-cover-div{
   margin: 0px 10px 10px 0px;
@@ -149,8 +169,7 @@ form button{
 }
 .show-info{
   display: flex;
-  flex-direction: column;
-  font-size: 3vw;
+  font-size: 5vw;
   margin-left: 5%;
 }
 .show-segment{
@@ -167,19 +186,21 @@ form button{
 
 .show-table th{
   width: 10%;
-  font-size: 2vw;
+  font-size: 30px;
 }
 .show-table td{
-  font-size: medium;
-  font-size: 2vw;
+  font-size: 3vw;
 }
 .plot-title{
   font-weight: bolder;
-  font-size: 1vw;
+  font-size: 12px;
 }
 .show-plot{
   margin-top: 2vw;
-  font-size: 1vw;
+  height: auto;
+  font-size: 13px;
+  padding-bottom: 2VW;
+  border-bottom: 10px solid #41C1BA;
 }
 .view-div{
   display: flex;

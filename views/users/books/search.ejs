@@ -1,6 +1,8 @@
 <%- include('../../partials/header') %>
     
-<h1>BOOKS SEARCH PAGE</h1>
+<div class="sub-header">
+    <h1>BOOKS SEARCH PAGE</h1>
+</div>
 
 <div class="search-form-div">
     <form class="search-form" action="/users/books/search" method="POST">
@@ -13,7 +15,7 @@
 </div>
 <%if (results){%>
 <div class="search-results-div">
-    <table id="search-results-table">
+    <table class="search-results-table">
         <thead>
             <th>Poster</th>
             <th>Title</th>

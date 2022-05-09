@@ -35,7 +35,9 @@ function show (req, res){
     let movieDetails;
     let viewings;
     let director;
+    let directorName;
     let writer;
+    let writerName;
     let stars = '';
     request((rootShowURL + `${movieId}?api_key=${process.env.TMDB_API_KEY}&language=en-US`), function(err, response, body){
         movieDetails = JSON.parse(body);
@@ -49,10 +51,10 @@ function show (req, res){
                 return crew.job === 'Director'
             })
             writer = movieCredits.crew.find(function (crew){
-                return crew.job === 'Screenplay'
+                return crew.job === 'Screenplay'|| crew.job ==='Writer'
             })
             res.render('users/movies/show', {
-            movieDetails, stars, director: director.original_name, writer: writer.original_name, viewings, user: req.user
+            movieDetails, stars, director: director.name, writer: writer.name, viewings, user: req.user
         })
         })
     })
@@ -91,11 +93,11 @@ function edit (req, res){
                 return crew.job === 'Director'
             })
             writer = movieCredits.crew.find(function (crew){
-                return crew.job === 'Screenplay'
+                return crew.job === 'Screenplay'|| crew.job ==='Writer'
             })
             console.log(viewing)
             res.render('users/movies/edit', {
-            movieDetails, stars, director: director.original_name, writer: writer.original_name, viewing, user: req.user
+            movieDetails, stars, director: director.name, writer: writer.name, viewing, user: req.user
         })
         })
     })   

@@ -2,11 +2,13 @@
 <%-include("../../partials/movieshowinfo")%>
 
 
+<div class="sub-header">
+    <h1>Update Viewing</h1>
+</div>
 
-<div class="insert-viewing">
-    <h1>Update a Viewing</h1>
 
-    <form action = "/users/movies/<%=viewing.id%>?_method=PUT" method="POST">
+<div class="view-div">
+    <form class="view-form" action = "/users/movies/<%=viewing.id%>?_method=PUT" method="POST">
         <label>Date Viewed</label>
         <input type="date" name="viewDate" value="<%=viewing.viewDate%>">
         <label>Rating</label>
@@ -30,9 +32,11 @@
         
     </form>
 
-    <form action="/users/movies/<%=viewing.id%>?_method=DELETE" method="POST">
-        <button class="delete-button">Delete Your Viewing</button>
-        <input type="hidden" name="apiId" value="<%=movieDetails.id%>">
-    <form>
-        
+    <div class="delete-button-div">
+        <form class="delete-button-form" action="/users/movies/<%=viewing.id%>?_method=DELETE" method="POST">
+            <button class="delete-button">Delete Your Viewing</button>
+            <input type="hidden" name="apiId" value="<%=movieDetails.id%>">
+        <form>
+    </div>
+</div>
 <%-include("../../partials/footer")%>

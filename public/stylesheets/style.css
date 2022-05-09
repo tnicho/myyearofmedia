@@ -167,17 +167,19 @@ form button{
 
 .show-table th{
   width: 10%;
-  font-size: 4vw;
+  font-size: 2vw;
 }
 .show-table td{
   font-size: medium;
-  font-size: 4vw;
+  font-size: 2vw;
 }
 .plot-title{
   font-weight: bolder;
+  font-size: 1vw;
 }
 .show-plot{
   margin-top: 2vw;
+  font-size: 1vw;
 }
 .view-div{
   display: flex;
@@ -236,6 +238,18 @@ form button{
   border: 0px;
 }
 .views-button-cell button {
+  font-size: 3vw;
+  padding: 4px;
+  width: 80%;
+}
+
+.delete-button-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.delete-button-form button {
   font-size: 3vw;
   padding: 4px;
   width: 80%;

@@ -1,6 +1,7 @@
 <div class="sub-header">
     <h1>Movies Show Page</h1>
 </div>
+
 <div class="media-info">
     <div class="show-cover-div">
         <% if (movieDetails.poster_path !== null){%>
@@ -15,25 +16,24 @@
             <td><%=movieDetails.original_title%></td>
         </tr>
         <tr>
-            <th>Release Date</th>
+            <th>Release Date: </th>
             <td><%=movieDetails.release_date%></td>
         </tr>
         <tr>
-            <th>Director:</th>
+            <th>Director: </th>
             <td><%=director%></td>
         </tr>
         <tr>
-            <th>Writer:</th>
+            <th>Writer: </th>
             <td><%=writer%></td>
         </tr>
         <tr>
-            <th>Actors:</th>
+            <th>Actors: </th>
             <td><%=stars%></td>
         </tr>
-
     </table>
 </div>
 <div class="show-plot">
     <label class="plot-title">Plot:</label>
-    <label><%=movieDetails.overview%></label>
+    <label><%= movieDetails.overview%></label>
 </div>

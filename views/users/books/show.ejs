@@ -1,11 +1,12 @@
 <%-include("../../partials/header")%>
 <%-include("../../partials/bookshowinfo")%>
 
-
-<div class="insert-viewing">
+<div class="sub-header">
     <h1>Insert a Viewing</h1>
+</div>
 
-    <form action="/users/books/<%=book.id%>/create" method="POST">
+<div class="view-div">
+    <form class="view-form" action="/users/books/<%=book.id%>/create" method="POST">
         <label>Date Viewed</label>
         <input type="date" name="viewDate">
         <label>Rating</label>
@@ -24,11 +25,11 @@
         <input type="hidden" name="mediaType" value="books">
         <input type="hidden" name="creator" value="<%=book.volumeInfo.authors%>">
         <input type="hidden" name="apiId" value="<%=book.id%>">
-        <input type="submit" value="Enter New Viewing">
-        
+        <button type="submit" value="Enter New Viewing">Enter New Viewing</button>
     </form>
-
-    <table>
+</div>
+<div class="views-table-div">
+    <table class="views-table">
         <thead>
             <th>Date Viewed</th>
             <th>Rating (out of 5)</th>
@@ -40,7 +41,7 @@
                 <td><%=v.viewDate%></td>
                 <td><%=v.rating%></td>
                 <td><%=v.notes%></td>
-                <td>
+                <td class="views-button-cell">
                     <form action="/users/books/edit/<%=v.id%>" method="GET">
                         <button class="edit-button">Update</button>
                     </form>

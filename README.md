@@ -23,7 +23,7 @@ Steps:
 
 5)Return to the media view to see your full list
 
-6) Views can be edited or deleted by selecting the cover of the media you wish to edit 
+6)Views can be edited or deleted by selecting the cover of the media you wish to edit 
     and using the update button next o the specific viewing
     
 Link to the deployed App: 

@@ -5,8 +5,11 @@ MyYearOfMedia (aka My Media List)
 ***MyYearOfMedia was designed for use on mobile devices***
 
 Screenshots:
+
 ![Home-Page]https://github.com/tnicho/myyearofmedia/blob/main/myyearofmedia%20HomePage.png
+
 ![Search-Results]https://github.com/tnicho/myyearofmedia/blob/main/myyearinmedia%20search%20page.png
+
 ![Media-Info-Page]https://github.com/tnicho/myyearofmedia/blob/main/myyearinmedia%20media%20page.png
 
 Technologies Used: Express, Node.js, HTML, CSS, Javascript, Google Books API, TMDB API, Heroku

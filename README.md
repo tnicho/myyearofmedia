@@ -12,7 +12,7 @@ Screenshots:
 
 ![Media-Info-Page]https://github.com/tnicho/myyearofmedia/blob/main/myyearinmedia%20media%20page.png
 
-Technologies Used: Express, Node.js, HTML, CSS, Javascript, Google Books API, TMDB API, Heroku
+Technologies Used: Express, Node.js, HTML, CSS, Javascript, OAuth, Google Books API, TMDB API, Heroku
 
 Getting started:
 
